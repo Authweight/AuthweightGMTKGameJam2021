@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Helpers
 {
-    static class Vector2Extensions
+    static class VectorExtensions
     {
         public static Vector2 WithX(this Vector2 incoming, float x)
         {
