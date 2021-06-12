@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HurtBoxController : MonoBehaviour
+public class HitBoxController : MonoBehaviour
 {
     public int Damage;
 

@@ -10,14 +10,18 @@ public class PlayerShadowController : ShadowController
     public PlayerAttackController _attack2;
     public PlayerAttackController _attack3;
 
+    private PlayerController _player;
+
     public override void SetReferences(Transform lightsource, Transform occluder)
     {
         base.SetReferences(lightsource, occluder);
-        var player = occluder.GetComponent<PlayerController>();
-        if (player != null)
-        {
-            player.RegisterShadow(this);
-        }
+        _player = occluder.GetComponent<PlayerController>();
+        _player.RegisterShadow(this);
+    }
+
+    internal void Hurt(int damage)
+    {
+        _player.Hurt(damage);
     }
 
     public bool OnGround()

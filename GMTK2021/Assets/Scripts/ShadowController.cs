@@ -11,8 +11,6 @@ public class ShadowController : MonoBehaviour
     private SpriteRenderer _occlusionRender;
     private float _floorHeight = -2.78f;
 
-    private Rigidbody2D _rb;
-
     public virtual void SetReferences(Transform lightsource, Transform occluder)
     {
         _lightSource = lightsource;
@@ -23,7 +21,6 @@ public class ShadowController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
         _render = GetComponent<SpriteRenderer>();
         var floor = Physics2D.Raycast(transform.position, Vector2.down, 100.0f, LayerMask.GetMask("Ground"));
         _floorHeight = floor.point.y;
