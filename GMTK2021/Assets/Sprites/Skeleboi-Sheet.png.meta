@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: d4c1d642eec963c4c9dbe022ed34bd43
+guid: d0b81d083e4ac5b41bc719195fc49c8e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9125504360796100619
-    second: Hero-Jump-Sheet_0
+      213: 3440686094981087577
+    second: Skeleboi-Sheet_0
   - first:
-      213: 6726739282405475333
-    second: Hero-Jump-Sheet_1
+      213: 3960611883604516154
+    second: Skeleboi-Sheet_1
   - first:
-      213: 3937461551511274303
-    second: Hero-Jump-Sheet_2
+      213: 7221865849240142454
+    second: Skeleboi-Sheet_2
   - first:
-      213: 6410069553311458196
-    second: Hero-Jump-Sheet_3
+      213: -8480529807191589290
+    second: Skeleboi-Sheet_3
   - first:
-      213: -6290793682460070800
-    second: Hero-Jump-Sheet_4
+      213: -5582560480360460583
+    second: Skeleboi-Sheet_4
   - first:
-      213: 6143368959488524858
-    second: Hero-Jump-Sheet_5
+      213: 5882851607237981113
+    second: Skeleboi-Sheet_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hero-Jump-Sheet_0
+      name: Skeleboi-Sheet_0
       rect:
         serializedVersion: 2
         x: 1
@@ -135,14 +135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b08978dfddd44ae70800000000000000
-      internalID: 9125504360796100619
+      spriteID: 95149fa16c5cfbf20800000000000000
+      internalID: 3440686094981087577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hero-Jump-Sheet_1
+      name: Skeleboi-Sheet_1
       rect:
         serializedVersion: 2
         x: 101
@@ -156,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 504c170dcbd2a5d50800000000000000
-      internalID: 6726739282405475333
+      spriteID: a3d107f168be6f630800000000000000
+      internalID: 3960611883604516154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hero-Jump-Sheet_2
+      name: Skeleboi-Sheet_2
       rect:
         serializedVersion: 2
         x: 201
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3386966b6ca4a630800000000000000
-      internalID: 3937461551511274303
+      spriteID: 672cb7f0ab8393460800000000000000
+      internalID: 7221865849240142454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hero-Jump-Sheet_3
+      name: Skeleboi-Sheet_3
       rect:
         serializedVersion: 2
         x: 1
@@ -198,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4932da6fb4425f850800000000000000
-      internalID: 6410069553311458196
+      spriteID: 65ebb37721b1f4a80800000000000000
+      internalID: -8480529807191589290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hero-Jump-Sheet_4
+      name: Skeleboi-Sheet_4
       rect:
         serializedVersion: 2
         x: 101
@@ -219,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07c22b1d97c92b8a0800000000000000
-      internalID: -6290793682460070800
+      spriteID: 9de0bfe12d2c682b0800000000000000
+      internalID: -5582560480360460583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hero-Jump-Sheet_5
+      name: Skeleboi-Sheet_5
       rect:
         serializedVersion: 2
         x: 201
@@ -240,8 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a32897a0581a14550800000000000000
-      internalID: 6143368959488524858
+      spriteID: 9b371cb3e5614a150800000000000000
+      internalID: 5882851607237981113
       vertices: []
       indices: 
       edges: []
