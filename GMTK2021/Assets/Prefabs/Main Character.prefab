@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4e35dbb70e9d04ca57551417b574ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 2
 --- !u!50 &6511663453641726663
 Rigidbody2D:
   serializedVersion: 4
@@ -215,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bea65c296043354dad2c4e2a5b023ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthUi: {fileID: 0}
   _attack1: {fileID: 7465074957977665671}
   _attack2: {fileID: 1846081226276998445}
   _attack3: {fileID: 485812823655248941}
@@ -347,6 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4e35dbb70e9d04ca57551417b574ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 2
 --- !u!50 &1974239751
 Rigidbody2D:
   serializedVersion: 4
@@ -439,6 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4e35dbb70e9d04ca57551417b574ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 3
 --- !u!50 &1322473739
 Rigidbody2D:
   serializedVersion: 4

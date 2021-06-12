@@ -33,6 +33,7 @@ Transform:
   m_LocalScale: {x: -1.06, y: 1.9054, z: 1}
   m_Children:
   - {fileID: 3871587482086397625}
+  - {fileID: 6516169505626691191}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,6 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8f1d3ab075747845be910d6a52a753f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 3
+  HitParticles: {fileID: 6516169505626691190}
 --- !u!114 &1077960453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,10 +216,81 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hit Box
       objectReference: {fileID: 0}
+    - target: {fileID: 3890501400841672692, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
+      propertyPath: Damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
 --- !u!4 &3871587482086397625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2295839722404360743, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
   m_PrefabInstance: {fileID: 3055360694657442974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7316434888812811825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1536937418943906038}
+    m_Modifications:
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6933024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.13903894
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6933024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.13903894
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -22.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972679, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_Name
+      value: Blood Spatter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+--- !u!1 &6516169505626691190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4604692438603972679, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+  m_PrefabInstance: {fileID: 7316434888812811825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6516169505626691191 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+  m_PrefabInstance: {fileID: 7316434888812811825}
   m_PrefabAsset: {fileID: 0}

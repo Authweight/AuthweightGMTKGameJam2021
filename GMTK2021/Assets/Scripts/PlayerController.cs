@@ -3,9 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject _healthUi;
+    public PlayerAttackController _attack1;
+    public PlayerAttackController _attack2;
+    public PlayerAttackController _attack3;
+
     private Rigidbody2D _rb;
     private float _speed = 5;
     private float _jumpCooldown = .2f;
@@ -14,10 +21,9 @@ public class PlayerController : MonoBehaviour
     private List<ShadowController> _shadows = new List<ShadowController>();
     private Animator _anim;
     private bool _onGround;
+    private const int _maxHealth = 20;
+    private int _currentHealth = _maxHealth;
 
-    public PlayerAttackController _attack1;
-    public PlayerAttackController _attack2;
-    public PlayerAttackController _attack3;
 
     // Start is called before the first frame update
     void Start()
@@ -106,9 +112,16 @@ public class PlayerController : MonoBehaviour
             || _shadows.Any(x => x.OnGround());
     }
 
-    public void Hurt()
+    public void Hurt(int damage)
     {
-        Debug.Log("Hurt");
+        _currentHealth -= damage;
+        _healthUi.GetComponent<Text>().text = $"Health: {_currentHealth}";
+
+        if (_currentHealth <= 0)
+        {
+            var currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
     }
 
     public void RegisterShadow(ShadowController shadow)

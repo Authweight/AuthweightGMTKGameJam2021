@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HurtBoxController : MonoBehaviour
 {
+    public int Damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class HurtBoxController : MonoBehaviour
         var player = collision.gameObject.GetComponent<PlayerController>();
         if (player != null)
         {
-            player.Hurt();
+            player.Hurt(Damage);
         }
     }
 }

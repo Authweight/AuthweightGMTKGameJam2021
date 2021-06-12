@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4e35dbb70e9d04ca57551417b574ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 2
 --- !u!50 &3575236510714707008
 Rigidbody2D:
   serializedVersion: 4
@@ -163,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4e35dbb70e9d04ca57551417b574ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 2
 --- !u!50 &7947827202399291899
 Rigidbody2D:
   serializedVersion: 4
@@ -255,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4e35dbb70e9d04ca57551417b574ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 3
 --- !u!50 &6808359462308267106
 Rigidbody2D:
   serializedVersion: 4

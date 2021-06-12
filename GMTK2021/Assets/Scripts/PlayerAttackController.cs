@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerAttackController : MonoBehaviour
 {
     private Collider2D _collider;
+    public int Damage;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class PlayerAttackController : MonoBehaviour
         var killable = collision.GetComponent<KillableController>();
         if (killable != null)
         {
-            killable.Hit();
+            killable.Hit(Damage);
         }
     }
 
