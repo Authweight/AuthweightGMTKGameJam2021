@@ -12,12 +12,18 @@ public class PlayerController : MonoBehaviour
     private float _jumpVel = 15;
     private CooldownTimer _jumpTimer;
     private List<ShadowController> _shadows = new List<ShadowController>();
+    private Animator _anim;
+
+    public PlayerAttackController _attack1;
+    public PlayerAttackController _attack2;
+    public PlayerAttackController _attack3;
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _jumpTimer = new CooldownTimer(_jumpCooldown);
+        _anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         var onGround = OnGround();
         var currentVelocity = _rb.velocity;
+        ApplyAttack();
         currentVelocity = ApplyHorizontalAxis(currentVelocity);
         currentVelocity = ApplyJump(currentVelocity, onGround);
 
@@ -38,10 +45,19 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 ApplyJump(Vector2 currentVelocity, bool onGround)
     {
-        if (Input.GetAxis("Fire1") > 0 && onGround && _jumpTimer.CheckTime(Time.time))
+        if (Input.GetButtonDown("Fire1") && onGround && _jumpTimer.CheckTime(Time.time))
         {
             currentVelocity = currentVelocity.ApplyY(_jumpVel);
             _jumpTimer.StartCooldown(Time.time);
+            _anim.SetTrigger("Jump");
+        }
+        else if (onGround)
+        {
+            _anim.SetBool("In Air", false);
+        }
+        else
+        {
+            _anim.SetBool("In Air", true);
         }
 
         return currentVelocity;
@@ -52,17 +68,30 @@ public class PlayerController : MonoBehaviour
         var input = Input.GetAxis("Horizontal");
         if (input < 0)
         {
+            _anim.SetBool("Walking", true);
             transform.localScale = transform.localScale.WithX(-1);
         }
-
-        if (input > 0)
+        else if (input > 0)
         {
+            _anim.SetBool("Walking", true);
             transform.localScale = transform.localScale.WithX(1);
+        }
+        else
+        {
+            _anim.SetBool("Walking", false);
         }
         
         currentVelocity = currentVelocity.WithX(input * _speed);
         
         return currentVelocity;
+    }
+
+    private void ApplyAttack()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            _anim.SetTrigger("Attack");
+        }
     }
 
     bool OnGround()
@@ -81,5 +110,77 @@ public class PlayerController : MonoBehaviour
     public void RegisterShadow(ShadowController shadow)
     {
         _shadows.Add(shadow);
+    }
+
+    public void BeginAttack1()
+    {
+        _attack1.Activate();
+        foreach(var shadow in _shadows)
+        {
+            if (shadow != null)
+            {
+                shadow.BeginAttack1();
+            }
+        }
+    }
+
+    public void EndAttack1()
+    {
+        _attack1.Deactivate();
+        foreach (var shadow in _shadows)
+        {
+            if (shadow != null)
+            {
+                shadow.EndAttack1();
+            }
+        }
+    }
+
+    public void BeginAttack2()
+    {
+        _attack2.Activate();
+        foreach (var shadow in _shadows)
+        {
+            if (shadow != null)
+            {
+                shadow.BeginAttack2();
+            }
+        }
+    }
+
+    public void EndAttack2()
+    {
+        _attack2.Deactivate();
+        foreach (var shadow in _shadows)
+        {
+            if (shadow != null)
+            {
+                shadow.EndAttack2();
+            }
+        }
+    }
+
+    public void BeginAttack3()
+    {
+        _attack3.Activate();
+        foreach (var shadow in _shadows)
+        {
+            if (shadow != null)
+            {
+                shadow.BeginAttack3();
+            }
+        }
+    }
+
+    public void EndAttack3()
+    {
+        _attack3.Deactivate();
+        foreach (var shadow in _shadows)
+        {
+            if (shadow != null)
+            {
+                shadow.EndAttack3();
+            }
+        }
     }
 }

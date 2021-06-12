@@ -13,6 +13,10 @@ public class ShadowController : MonoBehaviour
 
     private Rigidbody2D _rb;
 
+    public PlayerAttackController _attack1;
+    public PlayerAttackController _attack2;
+    public PlayerAttackController _attack3;
+
     public void SetReferences(Transform lightsource, Transform occluder)
     {
         _lightSource = lightsource;
@@ -46,7 +50,7 @@ public class ShadowController : MonoBehaviour
         transform.localScale = _occluder.transform.localScale * scale;
         transform.position = _occluder.position + pointingVector / 2;
 
-        var transparencyPercent = Mathf.Min(1.5f / scale, 90);
+        var transparencyPercent = Mathf.Min(1.0f / scale, 90);
         _render.color = new Color(0, 0, 0, transparencyPercent);
     }
 
@@ -64,5 +68,35 @@ public class ShadowController : MonoBehaviour
     public bool OnGround()
     {
         return Physics2D.Raycast(transform.position, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Shadow Ground"));
+    }
+
+    public void BeginAttack1()
+    {
+        _attack1.Activate();
+    }
+
+    public void EndAttack1()
+    {
+        _attack1.Deactivate();
+    }
+
+    public void BeginAttack2()
+    {
+        _attack2.Activate();
+    }
+
+    public void EndAttack2()
+    {
+        _attack2.Deactivate();
+    }
+
+    public void BeginAttack3()
+    {
+        _attack3.Activate();
+    }
+
+    public void EndAttack3()
+    {
+        _attack3.Deactivate();
     }
 }

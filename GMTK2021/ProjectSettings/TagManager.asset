@@ -14,7 +14,7 @@ TagManager:
   - Ground
   - Enemy
   - Player
-  - Hurt Box
+  - Hit Box
   - Shadow
   - Shadow Ground
   - 
