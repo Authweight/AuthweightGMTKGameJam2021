@@ -28,5 +28,25 @@ namespace Assets.Scripts.Helpers
         {
             return new Vector2(incoming.x, incoming.y + y);
         }
+
+        public static Vector3 WithX(this Vector3 incoming, float x)
+        {
+            return new Vector3(x, incoming.y, incoming.z);
+        }
+
+        public static Vector3 WithY(this Vector3 incoming, float y)
+        {
+            return new Vector3(incoming.x, y, incoming.z);
+        }
+
+        public static Vector3 ApplyX(this Vector3 incoming, float x)
+        {
+            return new Vector3(incoming.x + x, incoming.y, incoming.z);
+        }
+
+        public static Vector3 ApplyY(this Vector3 incoming, float y)
+        {
+            return new Vector3(incoming.x, incoming.y + y, incoming.z);
+        }
     }
 }
