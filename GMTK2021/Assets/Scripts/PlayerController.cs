@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour
     public PlayerAttackController _attack1;
     public PlayerAttackController _attack2;
     public PlayerAttackController _attack3;
+    public GameObject BloodSpatter;
 
     private Rigidbody2D _rb;
     private float _speed = 5;
     private float _jumpCooldown = .2f;
+    private float _attackCooldown = 1.0f;
     private float _jumpVel = 15;
     private CooldownTimer _jumpTimer;
+    private CooldownTimer _attackTimer;
     private List<ShadowController> _shadows = new List<ShadowController>();
     private Animator _anim;
     private bool _onGround;
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _jumpTimer = new CooldownTimer(_jumpCooldown);
+        _attackTimer = new CooldownTimer(_attackCooldown);
         _anim = GetComponent<Animator>();
     }
 
@@ -98,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyAttack()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (_attackTimer.CheckTime(Time.time) && Input.GetButtonDown("Fire2"))
         {
             _anim.SetTrigger("Attack");
         }
@@ -114,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     public void Hurt(int damage)
     {
+        BloodSpatter.GetComponent<ParticleSystem>().Play();
         _currentHealth -= damage;
         _healthUi.GetComponent<Text>().text = $"Health: {_currentHealth}";
 
@@ -179,6 +184,7 @@ public class PlayerController : MonoBehaviour
 
     public void BeginAttack3()
     {
+        _attackTimer.StartCooldown(Time.time);
         _attack3.Activate();
         foreach (var shadow in _shadows)
         {

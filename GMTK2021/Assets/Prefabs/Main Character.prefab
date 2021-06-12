@@ -129,6 +129,7 @@ Transform:
   - {fileID: 1587088582}
   - {fileID: 9120432526305636809}
   - {fileID: 7499002041827116094}
+  - {fileID: 575922525646299041}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -220,6 +221,7 @@ MonoBehaviour:
   _attack1: {fileID: 7465074957977665671}
   _attack2: {fileID: 1846081226276998445}
   _attack3: {fileID: 485812823655248941}
+  BloodSpatter: {fileID: 575922525646299040}
 --- !u!61 &1343405804485867988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -324,7 +326,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.002916, y: 1.7835177}
+  m_Offset: {x: 0.48404208, y: 1.304052}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -335,7 +337,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8721011, y: 3.5376732}
+  m_Size: {x: 2.962393, y: 2.5787418}
   m_EdgeRadius: 0
 --- !u!114 &1846081226276998445
 MonoBehaviour:
@@ -417,7 +419,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.002916, y: 1.7835177}
+  m_Offset: {x: 0.017712235, y: 1.84263}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -428,7 +430,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8721011, y: 3.5376732}
+  m_Size: {x: 4.9459352, y: 3.6558979}
   m_EdgeRadius: 0
 --- !u!114 &485812823655248941
 MonoBehaviour:
@@ -464,3 +466,70 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &4042316137300615143
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1343405804485867987}
+    m_Modifications:
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6933024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.13903894
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6933024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.13903894
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -22.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604692438603972679, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+      propertyPath: m_Name
+      value: Blood Spatter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+--- !u!1 &575922525646299040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4604692438603972679, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+  m_PrefabInstance: {fileID: 4042316137300615143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &575922525646299041 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4604692438603972678, guid: 8ed1a0afb36855f4c95dabca3cd1591e, type: 3}
+  m_PrefabInstance: {fileID: 4042316137300615143}
+  m_PrefabAsset: {fileID: 0}
