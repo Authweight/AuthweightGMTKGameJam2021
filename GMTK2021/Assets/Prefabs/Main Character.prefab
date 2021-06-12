@@ -495,23 +495,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5806402
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.40355542
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5806402
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.40355542
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -69.6
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -520,6 +520,18 @@ PrefabInstance:
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491756012571522034, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491756012571522034, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491756012571522034, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 791e3a98172ed5042968a53ea9849082, type: 3}

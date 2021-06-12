@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9155739487998102077}
   - component: {fileID: 3680614768660019095}
   - component: {fileID: -318174955065470382}
+  - component: {fileID: 730062985955383743}
   m_Layer: 12
   m_Name: Bat Enemy
   m_TagString: Untagged
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 4285306178031232746, guid: ccd56da642724584bae73f97e80849ea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,18 +123,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.009281635, y: 0.13459027}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.4, y: 2.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.3923101, y: 1.6775906}
   m_EdgeRadius: 0
 --- !u!114 &3680614768660019095
 MonoBehaviour:
@@ -161,6 +162,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 2
   HitParticles: {fileID: 7387636616292121906}
+--- !u!95 &730062985955383743
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9155739487998102078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cf2b50d25a87cc64dbff130d572ae683, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7544920976563234047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -220,6 +240,22 @@ PrefabInstance:
       propertyPath: Damage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5245719301044692719, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.383028
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245719301044692719, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7518475
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245719301044692719, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.004640579
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245719301044692719, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.17171824
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
 --- !u!4 &8604276308162467544 stripped
@@ -256,23 +292,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5806402
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.40355542
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5806402
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.40355542
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -69.6
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 7021147672066251178, guid: 791e3a98172ed5042968a53ea9849082, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

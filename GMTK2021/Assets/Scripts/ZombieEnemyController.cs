@@ -8,7 +8,7 @@ public class ZombieEnemyController : EnemyController
     public GameObject LungeHitBox;
 
     private Rigidbody2D _rb;
-    private float _lurchSpeed = 8;
+    private float _lurchSpeed = -8;
     private Animator _anim;
 
     private CooldownTimer _untilNextLurch = new CooldownTimer(2.5f);
@@ -26,13 +26,13 @@ public class ZombieEnemyController : EnemyController
         if (_untilNextLurch.CheckTime(Time.time))
         {
             _anim.SetTrigger("Lurch");
+            _untilNextLurch.StartCooldown(Time.time);
         }
     }
 
     public void BeginLunge()
     {
         _rb.velocity = _rb.velocity.WithX(_lurchSpeed * transform.localScale.x);
-        _untilNextLurch.StartCooldown(Time.time);
         LungeHitBox.GetComponent<HitBoxController>().enabled = true;
     }
 

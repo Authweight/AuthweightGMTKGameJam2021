@@ -10,6 +10,7 @@ public class KillableController : MonoBehaviour
     
     private bool _dying;
     private CooldownTimer _deathTimer;
+    private Rigidbody2D _rb;
 
 
     private int _currentHealth;
@@ -18,6 +19,7 @@ public class KillableController : MonoBehaviour
     {
         _currentHealth = MaxHealth;
         _deathTimer = new CooldownTimer(.5f);
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -41,6 +43,17 @@ public class KillableController : MonoBehaviour
 
     public void Die()
     {
+        var colliderCount = _rb.attachedColliderCount;
+        var colliders = new Collider2D[colliderCount];
+        _rb.GetAttachedColliders(colliders);
+
+        foreach(var collider in colliders)
+        {
+            collider.enabled = false;
+        }
+
+        GetComponent<SpriteRenderer>().enabled = false;
+
         _dying = true;
         _deathTimer.StartCooldown(Time.time);        
     }
