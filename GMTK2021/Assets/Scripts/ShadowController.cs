@@ -18,6 +18,11 @@ public class ShadowController : MonoBehaviour
         _lightSource = lightsource;
         _occluder = occluder;
         _occlusionRender = occluder.GetComponent<SpriteRenderer>();
+        var player = occluder.GetComponent<PlayerController>();
+        if (player != null)
+        {
+            player.RegisterShadow(this);
+        }
     }
 
     // Start is called before the first frame update
@@ -54,5 +59,10 @@ public class ShadowController : MonoBehaviour
     public float ScalingCalculation(float distanceFromLightSource)
     {
         return 1 + distanceFromLightSource * 0.1f;
+    }
+
+    public bool OnGround()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Shadow Ground"));
     }
 }

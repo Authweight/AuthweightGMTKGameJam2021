@@ -1,16 +1,17 @@
 using Assets.Scripts.Helpers;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class BasicController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
     private float _speed = 5;
-    private float _heightFromGround = .6f;
     private float _jumpCooldown = .2f;
-    private float _jumpVel = 13;
+    private float _jumpVel = 15;
     private CooldownTimer _jumpTimer;
+    private List<ShadowController> _shadows = new List<ShadowController>();
 
     // Start is called before the first frame update
     void Start()
@@ -22,16 +23,22 @@ public class BasicController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var onGround = OnGround();
         var currentVelocity = _rb.velocity;
         currentVelocity = ApplyHorizontalAxis(currentVelocity);
-        currentVelocity = ApplyJump(currentVelocity);
+        currentVelocity = ApplyJump(currentVelocity, onGround);
+
+        if (onGround)
+        {
+            currentVelocity = currentVelocity.WithFloorY(0);
+        }
 
         _rb.velocity = currentVelocity;
     }
 
-    private Vector2 ApplyJump(Vector2 currentVelocity)
+    private Vector2 ApplyJump(Vector2 currentVelocity, bool onGround)
     {
-        if (Input.GetAxis("Fire1") > 0 && OnGround() && _jumpTimer.CheckTime(Time.time))
+        if (Input.GetAxis("Fire1") > 0 && onGround && _jumpTimer.CheckTime(Time.time))
         {
             currentVelocity = currentVelocity.ApplyY(_jumpVel);
             _jumpTimer.StartCooldown(Time.time);
@@ -60,6 +67,19 @@ public class BasicController : MonoBehaviour
 
     bool OnGround()
     {
-        return Physics2D.Raycast(_rb.position, Vector2.down, _heightFromGround, layerMask: LayerMask.GetMask("Ground"));
+        _shadows = _shadows.Where(x => x != null).ToList();
+        return 
+            Physics2D.Raycast(_rb.position, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Ground"))
+            || _shadows.Any(x => x.OnGround());
+    }
+
+    public void Hurt()
+    {
+        Debug.Log("Hurt");
+    }
+
+    public void RegisterShadow(ShadowController shadow)
+    {
+        _shadows.Add(shadow);
     }
 }

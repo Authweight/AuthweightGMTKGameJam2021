@@ -19,6 +19,11 @@ namespace Assets.Scripts.Helpers
             return new Vector2(incoming.x, y);
         }
 
+        public static Vector2 WithFloorY(this Vector2 incoming, float minY)
+        {
+            return new Vector2(incoming.x, Mathf.Max(minY, incoming.y));
+        }
+
         public static Vector2 ApplyX(this Vector2 incoming, float x)
         {
             return new Vector2(incoming.x + x, incoming.y);
