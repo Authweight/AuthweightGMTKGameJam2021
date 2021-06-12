@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private float _jumpVel = 15;
     private CooldownTimer _jumpTimer;
     private CooldownTimer _attackTimer;
-    private List<ShadowController> _shadows = new List<ShadowController>();
+    private List<PlayerShadowController> _shadows = new List<PlayerShadowController>();
     private Animator _anim;
     private bool _onGround;
     private const int _maxHealth = 20;
@@ -43,6 +43,11 @@ public class PlayerController : MonoBehaviour
         if (_onGround)
         {
             _rb.velocity = _rb.velocity.WithFloorY(0);
+            _anim.SetBool("In Air", false);
+        }
+        else
+        {
+            _anim.SetBool("In Air", true);
         }
     }
 
@@ -64,14 +69,6 @@ public class PlayerController : MonoBehaviour
             currentVelocity = currentVelocity.ApplyY(_jumpVel);
             _jumpTimer.StartCooldown(Time.time);
             _anim.SetTrigger("Jump");
-        }
-        else if (_onGround)
-        {
-            _anim.SetBool("In Air", false);
-        }
-        else
-        {
-            _anim.SetBool("In Air", true);
         }
 
         return currentVelocity;
@@ -129,7 +126,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void RegisterShadow(ShadowController shadow)
+    public void RegisterShadow(PlayerShadowController shadow)
     {
         _shadows.Add(shadow);
     }

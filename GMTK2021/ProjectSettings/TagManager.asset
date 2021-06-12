@@ -19,7 +19,7 @@ TagManager:
   - Shadow Ground
   - Flying Enemy
   - Platform
-  - 
+  - Shadow Hit Box
   - 
   - 
   - 
@@ -41,10 +41,13 @@ TagManager:
   - name: Background
     uniqueID: 3046977461
     locked: 0
+  - name: Platform Shadow
+    uniqueID: 3045896159
+    locked: 0
   - name: Platform
     uniqueID: 251250723
     locked: 0
-  - name: Shadow
+  - name: Character Shadow
     uniqueID: 554020271
     locked: 0
   - name: Default
