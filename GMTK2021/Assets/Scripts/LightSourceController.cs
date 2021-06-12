@@ -28,7 +28,7 @@ public class LightSourceController : MonoBehaviour
             var id = occluder.GetInstanceID();
             _references[id] = newShadow;
             newShadow.SetReferences(transform, occluder.transform);
-            newShadow.SetTransform(transform.position, occluder.transform.position);
+            newShadow.SetTransform();
         }
     }
 

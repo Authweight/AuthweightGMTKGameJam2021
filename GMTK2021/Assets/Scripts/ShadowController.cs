@@ -9,6 +9,7 @@ public class ShadowController : MonoBehaviour
     private Transform _lightSource;
     private Transform _occluder;
     private SpriteRenderer _render;
+    private SpriteRenderer _occlusionRender;
 
     private Rigidbody2D _rb;
 
@@ -16,6 +17,7 @@ public class ShadowController : MonoBehaviour
     {
         _lightSource = lightsource;
         _occluder = occluder;
+        _occlusionRender = occluder.GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -28,19 +30,25 @@ public class ShadowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetTransform(_lightSource.position, _occluder.position);
+        SetSprite();
+        SetTransform();
     }
 
-    public void SetTransform(Vector2 lightSource, Vector2 occluder)
+    public void SetTransform()
     {
-        var pointingVector = occluder - lightSource;
+        var pointingVector = _occluder.position - _lightSource.position;
         var scale = ScalingCalculation(pointingVector.magnitude);
-        transform.localScale = Vector3.one * scale;
-        transform.position = occluder + (pointingVector - (Vector2.down * (scale / 2))) / 2;
+        transform.localScale = _occluder.transform.localScale * scale;
+        transform.position = _occluder.position + pointingVector / 2;
 
         var transparencyPercent = Mathf.Min(1.5f / scale, 90);
-        Debug.Log(transparencyPercent);
-        _render.color = _render.color.WithTransparency(transparencyPercent);
+        _render.color = new Color(0, 0, 0, transparencyPercent);
+    }
+
+    public void SetSprite()
+    {
+        var newSprite = _occlusionRender.sprite;
+        _render.sprite = newSprite;        
     }
 
     public float ScalingCalculation(float distanceFromLightSource)

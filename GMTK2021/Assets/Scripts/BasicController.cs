@@ -42,7 +42,19 @@ public class BasicController : MonoBehaviour
 
     private Vector2 ApplyHorizontalAxis(Vector2 currentVelocity)
     {
-        currentVelocity = currentVelocity.WithX(Input.GetAxis("Horizontal") * _speed);
+        var input = Input.GetAxis("Horizontal");
+        if (input < 0)
+        {
+            transform.localScale = transform.localScale.WithX(-1);
+        }
+
+        if (input > 0)
+        {
+            transform.localScale = transform.localScale.WithX(1);
+        }
+        
+        currentVelocity = currentVelocity.WithX(input * _speed);
+        
         return currentVelocity;
     }
 
