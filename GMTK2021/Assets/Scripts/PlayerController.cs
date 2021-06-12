@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private CooldownTimer _jumpTimer;
     private List<ShadowController> _shadows = new List<ShadowController>();
     private Animator _anim;
+    private bool _onGround;
 
     public PlayerAttackController _attack1;
     public PlayerAttackController _attack2;
@@ -26,32 +27,35 @@ public class PlayerController : MonoBehaviour
         _anim = GetComponent<Animator>();
     }
 
+    void FixedUpdate()
+    {
+        _onGround = OnGround();
+        if (_onGround)
+        {
+            _rb.velocity = _rb.velocity.WithFloorY(0);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        var onGround = OnGround();
         var currentVelocity = _rb.velocity;
         ApplyAttack();
         currentVelocity = ApplyHorizontalAxis(currentVelocity);
-        currentVelocity = ApplyJump(currentVelocity, onGround);
-
-        if (onGround)
-        {
-            currentVelocity = currentVelocity.WithFloorY(0);
-        }
+        currentVelocity = ApplyJump(currentVelocity);
 
         _rb.velocity = currentVelocity;
     }
 
-    private Vector2 ApplyJump(Vector2 currentVelocity, bool onGround)
+    private Vector2 ApplyJump(Vector2 currentVelocity)
     {
-        if (Input.GetButtonDown("Fire1") && onGround && _jumpTimer.CheckTime(Time.time))
+        if (Input.GetButtonDown("Fire1") && _onGround && _jumpTimer.CheckTime(Time.time))
         {
             currentVelocity = currentVelocity.ApplyY(_jumpVel);
             _jumpTimer.StartCooldown(Time.time);
             _anim.SetTrigger("Jump");
         }
-        else if (onGround)
+        else if (_onGround)
         {
             _anim.SetBool("In Air", false);
         }
@@ -98,7 +102,7 @@ public class PlayerController : MonoBehaviour
     {
         _shadows = _shadows.Where(x => x != null).ToList();
         return 
-            Physics2D.Raycast(_rb.position, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Ground"))
+            Physics2D.Raycast(_rb.position, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Ground", "Platform"))
             || _shadows.Any(x => x.OnGround());
     }
 

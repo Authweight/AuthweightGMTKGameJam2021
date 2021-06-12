@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9155739487998102077}
   - component: {fileID: 3680614768660019095}
   - component: {fileID: -318174955065470382}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: Bat Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9155739487998102078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 420f5d3e96a9e1040a9eeda2efb58dd4, type: 3}
   m_Name: 
@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2550567123035973522, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}
       propertyPath: m_Name
-      value: Hurt Box
+      value: Hit Box
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a4b8d917bfa3dc47b15576a7e37108c, type: 3}

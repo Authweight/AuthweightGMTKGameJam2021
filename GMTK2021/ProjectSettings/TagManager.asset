@@ -12,13 +12,13 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Enemy
+  - Ground Enemy
   - Player
   - Hit Box
   - Shadow
   - Shadow Ground
-  - 
-  - 
+  - Flying Enemy
+  - Platform
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3046977461
+    locked: 0
+  - name: Platform
+    uniqueID: 251250723
     locked: 0
   - name: Shadow
     uniqueID: 554020271

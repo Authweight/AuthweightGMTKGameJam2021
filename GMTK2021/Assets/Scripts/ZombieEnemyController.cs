@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieEnemyController : MonoBehaviour
+public class ZombieEnemyController : EnemyController
 {
     private Rigidbody2D _rb;
     private float _lurchSpeed = 8;

@@ -10,6 +10,7 @@ public class ShadowController : MonoBehaviour
     private Transform _occluder;
     private SpriteRenderer _render;
     private SpriteRenderer _occlusionRender;
+    private float _floorHeight = -2.78f;
 
     private Rigidbody2D _rb;
 
@@ -34,6 +35,8 @@ public class ShadowController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _render = GetComponent<SpriteRenderer>();
+        var floor = Physics2D.Raycast(transform.position, Vector2.down, 100.0f, LayerMask.GetMask("Ground"));
+        _floorHeight = floor.point.y;
     }
 
     // Update is called once per frame
@@ -45,7 +48,7 @@ public class ShadowController : MonoBehaviour
 
     public void SetTransform()
     {
-        var pointingVector = _occluder.position - _lightSource.position;
+        var pointingVector = _occluder.position - _lightSource.position.WithY(_floorHeight);
         var scale = ScalingCalculation(pointingVector.magnitude);
         transform.localScale = _occluder.transform.localScale * scale;
         transform.position = _occluder.position + pointingVector / 2;
