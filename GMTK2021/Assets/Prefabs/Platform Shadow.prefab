@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1954953185003971837}
   - component: {fileID: 6197819499721766744}
   - component: {fileID: 7247110920222341531}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Platform Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_Color: {r: 0, g: 0, b: 0, a: 0.56078434}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0

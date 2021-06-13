@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4266079734711378487}
   - component: {fileID: 4266079734711378484}
   - component: {fileID: 4266079734711378485}
+  - component: {fileID: 7263362316259594362}
   m_Layer: 13
   m_Name: 3x3 Crate
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 251250723
   m_SortingLayer: -2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 6e96dd24fd3ac044eaf22e186ce0aca0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d0706b4ef4d0174a86300b0a3dd2a1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +93,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4266079734711378480}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
-    oldSize: {x: 1.25, y: 1.25}
+    oldSize: {x: 0.5, y: 0.5}
     newSize: {x: 3.77, y: 3.7839124}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
@@ -131,3 +132,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.763855, y: 3.730317}
   m_EdgeRadius: 0
+--- !u!114 &7263362316259594362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4266079734711378480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5dad7c0dbe13046a577ee0f37b9ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shadow: {fileID: 7247110920222341531, guid: 1bc56341e17486c49a86e252113c5dce, type: 3}

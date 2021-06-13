@@ -48,6 +48,10 @@ public class ShadowController : MonoBehaviour
     {
         var newSprite = _occlusionRender.sprite;
         _render.sprite = newSprite;
+        if (_render.drawMode == SpriteDrawMode.Tiled)
+        {
+            _render.size = _occlusionRender.size;
+        }
     }
 
     public float ScalingCalculation(float distanceFromLightSource)
