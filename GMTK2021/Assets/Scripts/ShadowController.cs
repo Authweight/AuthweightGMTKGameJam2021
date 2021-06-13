@@ -39,7 +39,7 @@ public class ShadowController : MonoBehaviour
     {
         var pointingVector = _occluder.position - _lightSource.position.WithY(_floorHeight);
         var scale = ScalingCalculation(pointingVector.magnitude);
-        transform.localScale = _occluder.transform.localScale * scale;
+        transform.localScale = _occluder.transform.lossyScale * scale;
         transform.position = _occluder.position + pointingVector / 2;
 
         var transparencyPercent = Mathf.Min(1.0f / scale, 90) * _discountRate;
