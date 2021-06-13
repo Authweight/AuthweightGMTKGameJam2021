@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     private const int _maxHealth = 20;
     private int _currentHealth = _maxHealth;
     private Vector2? _lockVel = null;
+    private CooldownTimer _damageCooldown;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
         _jumpTimer = new CooldownTimer(_jumpCooldown);
         _attackTimer = new CooldownTimer(_attackCooldown);
         _anim = GetComponent<Animator>();
+        _damageCooldown = new CooldownTimer(1.0f);
     }
 
     void FixedUpdate()
@@ -124,9 +126,13 @@ public class PlayerController : MonoBehaviour
 
     public void Hurt(int damage)
     {
-        BloodSpatter.GetComponent<ParticleSystem>().Play();
-        _currentHealth -= damage;
-        _healthUi.GetComponent<Text>().text = $"Health: {_currentHealth}";
+        if (_damageCooldown.CheckTime(Time.time))
+        {
+            _damageCooldown.StartCooldown(Time.time);
+            BloodSpatter.GetComponent<ParticleSystem>().Play();
+            _currentHealth -= damage;
+            _healthUi.GetComponent<Text>().text = $"Health: {_currentHealth}";
+        }
 
         if (_currentHealth <= 0)
         {

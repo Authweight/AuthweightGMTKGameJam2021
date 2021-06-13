@@ -11,7 +11,7 @@ public class PlayerShadowController : ShadowController
     public PlayerAttackController _attack3;
     public PlayerAttackController _airAttack;
 
-    private PlayerController _player;
+    private PlayerController _player;    
 
     public override void SetReferences(Transform lightsource, Transform occluder)
     {

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c06e42e018c42547a05e0f08279c10e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _discountRate: 1
   _attack1: {fileID: 815168014700253198}
   _attack2: {fileID: 8455457700461305252}
   _attack3: {fileID: 7670963677643187364}
@@ -102,6 +103,10 @@ PrefabInstance:
     - target: {fileID: 1343405804485867987, guid: 33c383224b48ba741b0f34a80b130a78, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343405804485867988, guid: 33c383224b48ba741b0f34a80b130a78, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2588874714799295782, guid: 33c383224b48ba741b0f34a80b130a78, type: 3}
       propertyPath: Damage

@@ -24,6 +24,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 1536937418943906037, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1536937418943906038, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -95,6 +99,14 @@ PrefabInstance:
     - target: {fileID: 1536937418943906058, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
       propertyPath: m_Name
       value: Shadow Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536937418943906058, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2506437504727805067, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4139850664136223830, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
       propertyPath: playOnAwake

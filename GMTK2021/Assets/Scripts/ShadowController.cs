@@ -11,6 +11,8 @@ public class ShadowController : MonoBehaviour
     private SpriteRenderer _occlusionRender;
     private float _floorHeight = -2.78f;
 
+    public float _discountRate;
+
     public virtual void SetReferences(Transform lightsource, Transform occluder)
     {
         _lightSource = lightsource;
@@ -40,7 +42,7 @@ public class ShadowController : MonoBehaviour
         transform.localScale = _occluder.transform.localScale * scale;
         transform.position = _occluder.position + pointingVector / 2;
 
-        var transparencyPercent = Mathf.Min(1.0f / scale, 90);
+        var transparencyPercent = Mathf.Min(1.0f / scale, 90) * _discountRate;
         _render.color = new Color(0, 0, 0, transparencyPercent);
     }
 
