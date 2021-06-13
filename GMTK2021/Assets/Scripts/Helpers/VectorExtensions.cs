@@ -34,6 +34,11 @@ namespace Assets.Scripts.Helpers
             return new Vector2(incoming.x, incoming.y + y);
         }
 
+        public static Vector2 ReverseX(this Vector2 incoming)
+        {
+            return new Vector2(-incoming.x, incoming.y);
+        }
+
         public static Vector3 WithX(this Vector3 incoming, float x)
         {
             return new Vector3(x, incoming.y, incoming.z);
@@ -52,6 +57,16 @@ namespace Assets.Scripts.Helpers
         public static Vector3 ApplyY(this Vector3 incoming, float y)
         {
             return new Vector3(incoming.x, incoming.y + y, incoming.z);
+        }
+
+        public static Vector3 ReverseX(this Vector3 incoming)
+        {
+            return new Vector3(-incoming.x, incoming.y, incoming.z);
+        }
+
+        public static Vector3 MultiplyZ(this Vector3 incoming, float value)
+        {
+            return new Vector3(-incoming.x, incoming.y, incoming.z * value);
         }
     }
 }

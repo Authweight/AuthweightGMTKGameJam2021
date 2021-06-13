@@ -12,12 +12,12 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Ground Enemy
+  - Enemy
   - Player
   - Hit Box
   - Shadow
   - Shadow Ground
-  - Flying Enemy
+  - 
   - Platform
   - Shadow Hit Box
   - 

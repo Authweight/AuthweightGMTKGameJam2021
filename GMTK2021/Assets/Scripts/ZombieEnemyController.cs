@@ -7,7 +7,6 @@ public class ZombieEnemyController : EnemyController
 {
     public GameObject LungeHitBox;
 
-    private Rigidbody2D _rb;
     private float _lurchSpeed = -8;
     private Animator _anim;
 
@@ -16,13 +15,19 @@ public class ZombieEnemyController : EnemyController
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (BumpingIntoWall())
+        {
+            this.transform.localScale = this.transform.localScale.ReverseX();
+            _rb.velocity = _rb.velocity.ReverseX();
+        }
+
         if (_untilNextLurch.CheckTime(Time.time))
         {
             _anim.SetTrigger("Lurch");

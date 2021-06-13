@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3680614768660019095}
   - component: {fileID: -318174955065470382}
   - component: {fileID: 730062985955383743}
-  m_Layer: 12
+  m_Layer: 7
   m_Name: Bat Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 9155739487998102078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.88, y: 3.93, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8604276308162467544}
   - {fileID: 1090166724867431791}
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420f5d3e96a9e1040a9eeda2efb58dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FlightVector: {x: -1, y: 0}
 --- !u!114 &-318174955065470382
 MonoBehaviour:
   m_ObjectHideFlags: 0
