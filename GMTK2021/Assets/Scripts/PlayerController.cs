@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private int _currentHealth = _maxHealth;
     private Vector2? _lockVel = null;
     private CooldownTimer _damageCooldown;
+    private CooldownTimer _landingCooldown;
 
 
     // Start is called before the first frame update
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
         _attackTimer = new CooldownTimer(_attackCooldown);
         _anim = GetComponent<Animator>();
         _damageCooldown = new CooldownTimer(1.0f);
+        _landingCooldown = new CooldownTimer(0.3f);
     }
 
     void FixedUpdate()
@@ -49,10 +51,16 @@ public class PlayerController : MonoBehaviour
         {
             _rb.velocity = _rb.velocity.WithFloorY(0);
             _anim.SetBool("In Air", false);
+            if (_landingCooldown.CheckTime(Time.time))
+            {
+                AudioController.PlayClip("Jump Landing");
+            }
+
+            _landingCooldown.StartCooldown(Time.time);
         }
         else
         {
-            _anim.SetBool("In Air", true);
+            _anim.SetBool("In Air", true);           
         }
     }
 
