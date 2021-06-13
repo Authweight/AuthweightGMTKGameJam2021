@@ -289,9 +289,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3475309946521563265}
   - component: {fileID: 8071917733800624594}
-  - component: {fileID: 3896924641146361693}
   - component: {fileID: 5959713386713735681}
   - component: {fileID: 3480926689203958902}
+  - component: {fileID: 3896924641146361693}
   m_Layer: 10
   m_Name: Player Shadow
   m_TagString: Untagged
@@ -356,7 +356,7 @@ SpriteRenderer:
   m_SortingLayerID: 554020271
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5056170242580531691, guid: e135d4bf06d68c748abef39d09a5cd38, type: 3}
+  m_Sprite: {fileID: 7168306300447853127, guid: 1b7af2b609882d54a9de0e3227b4ebef, type: 3}
   m_Color: {r: 0.2264151, g: 0.086507656, b: 0.086507656, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -367,21 +367,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3896924641146361693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9220608036321508224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c06e42e018c42547a05e0f08279c10e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attack1: {fileID: 5847389472055052979}
-  _attack2: {fileID: 646327714466247206}
-  _attack3: {fileID: 2317427271587669984}
 --- !u!50 &5959713386713735681
 Rigidbody2D:
   serializedVersion: 4
@@ -429,3 +414,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1861439, y: 2.3553202}
   m_EdgeRadius: 0
+--- !u!114 &3896924641146361693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9220608036321508224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c06e42e018c42547a05e0f08279c10e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack1: {fileID: 5847389472055052979}
+  _attack2: {fileID: 646327714466247206}
+  _attack3: {fileID: 2317427271587669984}

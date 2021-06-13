@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public PlayerAttackController _attack1;
     public PlayerAttackController _attack2;
     public PlayerAttackController _attack3;
+    public PlayerAttackController _airAttack;
     public GameObject BloodSpatter;
 
     private Rigidbody2D _rb;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private bool _onGround;
     private const int _maxHealth = 20;
     private int _currentHealth = _maxHealth;
+    private Vector2? _lockVel = null;
 
 
     // Start is called before the first frame update
@@ -92,7 +94,14 @@ public class PlayerController : MonoBehaviour
             _anim.SetBool("Walking", false);
         }
         
-        currentVelocity = currentVelocity.WithX(input * _speed);
+        if (_lockVel.HasValue)
+        {
+            currentVelocity = _lockVel.Value;
+        }
+        else
+        {
+            currentVelocity = currentVelocity.WithX(input * _speed);
+        }
         
         return currentVelocity;
     }
@@ -133,6 +142,7 @@ public class PlayerController : MonoBehaviour
 
     public void BeginAttack1()
     {
+        _lockVel = LocalRight() * 2;
         _attack1.Activate();
         foreach(var shadow in _shadows)
         {
@@ -145,6 +155,7 @@ public class PlayerController : MonoBehaviour
 
     public void EndAttack1()
     {
+        _lockVel = Vector2.zero;
         _attack1.Deactivate();
         foreach (var shadow in _shadows)
         {
@@ -157,6 +168,7 @@ public class PlayerController : MonoBehaviour
 
     public void BeginAttack2()
     {
+        _lockVel = LocalRight() * 2;
         _attack2.Activate();
         foreach (var shadow in _shadows)
         {
@@ -169,6 +181,7 @@ public class PlayerController : MonoBehaviour
 
     public void EndAttack2()
     {
+        _lockVel = Vector2.zero;
         _attack2.Deactivate();
         foreach (var shadow in _shadows)
         {
@@ -181,6 +194,7 @@ public class PlayerController : MonoBehaviour
 
     public void BeginAttack3()
     {
+        _lockVel = LocalRight() * 3;
         _attackTimer.StartCooldown(Time.time);
         _attack3.Activate();
         foreach (var shadow in _shadows)
@@ -194,6 +208,7 @@ public class PlayerController : MonoBehaviour
 
     public void EndAttack3()
     {
+        _lockVel = Vector2.zero;
         _attack3.Deactivate();
         foreach (var shadow in _shadows)
         {
@@ -202,5 +217,43 @@ public class PlayerController : MonoBehaviour
                 shadow.EndAttack3();
             }
         }
+    }
+
+    public void BeginAirAttack()
+    {
+        _lockVel = LocalRight() * 12;
+        _airAttack.Activate();
+        _attackTimer.StartCooldown(Time.time);
+        foreach (var shadow in _shadows)
+        {
+            if (shadow != null)
+            {
+                shadow.BeginAirAttack();
+            }
+        }
+
+    }
+
+    public void EndAirAttack()
+    {
+        _lockVel = null;
+        _airAttack.Deactivate();
+        foreach (var shadow in _shadows)
+        {
+            if (shadow != null)
+            {
+                shadow.EndAirAttack();
+            }
+        }
+    }
+
+    public Vector2 LocalRight()
+    {
+        return transform.right * transform.localScale.x;
+    }
+
+    public void ReleaseAttackHold()
+    {
+        _lockVel = null;
     }
 }

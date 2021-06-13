@@ -9,6 +9,7 @@ public class PlayerShadowController : ShadowController
     public PlayerAttackController _attack1;
     public PlayerAttackController _attack2;
     public PlayerAttackController _attack3;
+    public PlayerAttackController _airAttack;
 
     private PlayerController _player;
 
@@ -57,5 +58,15 @@ public class PlayerShadowController : ShadowController
     public void EndAttack3()
     {
         _attack3.Deactivate();
+    }
+
+    internal void BeginAirAttack()
+    {
+        _airAttack.Activate();
+    }
+
+    internal void EndAirAttack()
+    {
+        _airAttack.Deactivate();
     }
 }
