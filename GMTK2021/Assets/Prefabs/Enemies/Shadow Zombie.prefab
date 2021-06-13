@@ -144,6 +144,10 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6758507167197016371, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e3a77fb96bbb9b84d9d53fb7da3782a4, type: 3}
     m_RemovedComponents:
     - {fileID: 2277418659744625514, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}

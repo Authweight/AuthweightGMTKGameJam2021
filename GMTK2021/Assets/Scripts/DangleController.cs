@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DangleController : MonoBehaviour
 {
+    public AudioController AudioController;
+
     private Rigidbody2D _rb;
     // Start is called before the first frame update
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -28,8 +31,12 @@ public class DangleController : MonoBehaviour
         if (collision.gameObject.tag == "Player hitbox")
         {
             multiplier = 300;
+            AudioController.PlayClip("Chain Rattle");
         }
 
-        _rb.AddForce(((transform.position - collision.gameObject.transform.position).normalized) * multiplier);
+        if (multiplier > 0)
+        {            
+            _rb.AddForce(((transform.position - collision.gameObject.transform.position).normalized) * multiplier);
+        }
     }
 }

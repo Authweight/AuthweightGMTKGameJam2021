@@ -20,6 +20,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1183410531773501652, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e3a77fb96bbb9b84d9d53fb7da3782a4, type: 3}
+    - target: {fileID: 1183410531773501652, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1984375898587117367, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
       value: 0.56078434
@@ -39,6 +47,10 @@ PrefabInstance:
     - target: {fileID: 5463322575434711917, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008467537661065389, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9155739487998102074, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
       propertyPath: m_RootOrder

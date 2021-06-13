@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public PlayerAttackController _attack3;
     public PlayerAttackController _airAttack;
     public GameObject BloodSpatter;
+    public AudioController AudioController;
 
     private Rigidbody2D _rb;
     private float _speed = 5;
@@ -135,6 +136,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_damageCooldown.CheckTime(Time.time))
         {
+            AudioController.PlayClip("Take Damage");
             _damageCooldown.StartCooldown(Time.time);
             BloodSpatter.GetComponent<ParticleSystem>().Play();
             _currentHealth -= damage;
@@ -160,6 +162,7 @@ public class PlayerController : MonoBehaviour
 
     public void BeginAttack1()
     {
+        AudioController.PlayClip("Sword 1");
         _lockVel = LocalRight() * 2;
         _attack1.Activate();
         foreach(var shadow in _shadows)
@@ -186,6 +189,7 @@ public class PlayerController : MonoBehaviour
 
     public void BeginAttack2()
     {
+        AudioController.PlayClip("Sword 3");
         _lockVel = LocalRight() * 2;
         _attack2.Activate();
         foreach (var shadow in _shadows)
@@ -212,6 +216,7 @@ public class PlayerController : MonoBehaviour
 
     public void BeginAttack3()
     {
+        AudioController.PlayClip("Double Sword");
         _lockVel = LocalRight() * 3;
         _attackTimer.StartCooldown(Time.time);
         _attack3.Activate();
@@ -239,6 +244,7 @@ public class PlayerController : MonoBehaviour
 
     public void BeginAirAttack()
     {
+        AudioController.PlayClip("Dash");
         _lockVel = LocalRight() * 12;
         _airAttack.Activate();
         _attackTimer.StartCooldown(Time.time);

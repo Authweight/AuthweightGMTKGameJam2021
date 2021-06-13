@@ -7,6 +7,7 @@ public class KillableController : MonoBehaviour
 {
     public int MaxHealth;
     public GameObject HitParticles;
+    public AudioController AudioController;
     
     private bool _dying;
     private CooldownTimer _deathTimer;
@@ -43,7 +44,12 @@ public class KillableController : MonoBehaviour
         _currentHealth -= damage;
         if (_currentHealth <= 0)
         {
+            AudioController.PlayClip("Enemy Death");
             Die();
+        }
+        else
+        {
+            AudioController.PlayClip("Enemy Hit");
         }
     }
 
