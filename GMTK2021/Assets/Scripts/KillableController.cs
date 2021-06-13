@@ -11,6 +11,7 @@ public class KillableController : MonoBehaviour
     private bool _dying;
     private CooldownTimer _deathTimer;
     private Rigidbody2D _rb;
+    public ArenaController _arena;
 
 
     private int _currentHealth;
@@ -43,18 +44,32 @@ public class KillableController : MonoBehaviour
 
     public void Die()
     {
-        var colliderCount = _rb.attachedColliderCount;
-        var colliders = new Collider2D[colliderCount];
-        _rb.GetAttachedColliders(colliders);
-
-        foreach(var collider in colliders)
-        {
-            collider.enabled = false;
-        }
+        DisableAllColliders();
 
         GetComponent<SpriteRenderer>().enabled = false;
 
         _dying = true;
-        _deathTimer.StartCooldown(Time.time);        
+        _deathTimer.StartCooldown(Time.time);
+        if (_arena != null)
+        {
+            _arena.NotifyDeath();
+        }
+    }
+
+    public void DisableAllColliders()
+    {
+        var colliderCount = _rb.attachedColliderCount;
+        var colliders = new Collider2D[colliderCount];
+        _rb.GetAttachedColliders(colliders);
+
+        foreach (var collider in colliders)
+        {
+            collider.enabled = false;
+        }
+    }
+
+    public void RegisterArena(ArenaController arena)
+    {
+        _arena = arena;
     }
 }

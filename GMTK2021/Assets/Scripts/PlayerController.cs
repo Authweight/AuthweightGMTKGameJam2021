@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private float _speed = 5;
     private float _jumpCooldown = .2f;
     private float _attackCooldown = 1.0f;
-    private float _jumpVel = 15;
+    private float _jumpVel = 17;
     private CooldownTimer _jumpTimer;
     private CooldownTimer _attackTimer;
     private List<PlayerShadowController> _shadows = new List<PlayerShadowController>();

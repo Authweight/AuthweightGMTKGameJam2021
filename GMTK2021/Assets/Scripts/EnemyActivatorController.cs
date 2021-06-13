@@ -9,7 +9,10 @@ public class EnemyActivatorController : MonoBehaviour
         var enemy = collision.GetComponent<EnemyController>();
         if (enemy != null)
         {
-            enemy.enabled = true;
+            if (!enemy.enabled)
+            {
+                enemy.enabled = true;
+            }
         }
     }
 }
