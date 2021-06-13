@@ -118,9 +118,12 @@ public class PlayerController : MonoBehaviour
 
     bool OnGround()
     {
+        var rightPos = transform.position + transform.right * 0.3f;
+        var leftPos = transform.position - transform.right * 0.3f;
         _shadows = _shadows.Where(x => x != null).ToList();
-        return 
-            Physics2D.Raycast(_rb.position, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Ground", "Platform"))
+        return Physics2D.Raycast(_rb.position, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Ground", "Platform"))
+            || Physics2D.Raycast(rightPos, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Ground", "Platform"))
+            || Physics2D.Raycast(leftPos, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Ground", "Platform"))
             || _shadows.Any(x => x.OnGround());
     }
 

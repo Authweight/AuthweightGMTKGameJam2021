@@ -11,7 +11,15 @@ public class PlayerShadowController : ShadowController
     public PlayerAttackController _attack3;
     public PlayerAttackController _airAttack;
 
-    private PlayerController _player;    
+    private PlayerController _player;
+    private bool _onGround;
+    private bool _lastOnGround;
+
+    private void FixedUpdate()
+    {
+        _lastOnGround = _onGround;
+        _onGround = CalculateOnGround();
+    }
 
     public override void SetReferences(Transform lightsource, Transform occluder)
     {
@@ -27,7 +35,16 @@ public class PlayerShadowController : ShadowController
 
     public bool OnGround()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, 0.1f, layerMask: LayerMask.GetMask("Shadow Ground"));
+        return _lastOnGround || _onGround;
+    }
+
+    private bool CalculateOnGround()
+    {
+        var rightPos = transform.position + transform.right * 0.2f * transform.localScale.x;
+        var leftPos = transform.position - transform.right * 0.2f * transform.localScale.x;
+        return Physics2D.Raycast(transform.position, Vector2.down, 0.2f, layerMask: LayerMask.GetMask("Shadow Ground"))
+            || Physics2D.Raycast(rightPos, Vector2.down, 0.2f, layerMask: LayerMask.GetMask("Shadow Ground"))
+            || Physics2D.Raycast(leftPos, Vector2.down, 0.2f, layerMask: LayerMask.GetMask("Shadow Ground"));
     }
 
     public void BeginAttack1()
@@ -68,5 +85,10 @@ public class PlayerShadowController : ShadowController
     internal void EndAirAttack()
     {
         _airAttack.Deactivate();
+    }
+
+    private Vector3 LocalRight()
+    {
+        return (transform.right * transform.localScale.x).normalized;
     }
 }
