@@ -26,6 +26,11 @@ public class KillableController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y < -10)
+        {
+            Die();
+        }
+
         if (_dying && _deathTimer.CheckTime(Time.time))
         {
             Destroy(this.gameObject);

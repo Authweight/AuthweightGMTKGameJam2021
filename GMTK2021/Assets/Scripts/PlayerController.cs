@@ -58,6 +58,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y < -10)
+        {
+            ReloadScene();
+        }
         var currentVelocity = _rb.velocity;
         ApplyAttack();
         currentVelocity = ApplyHorizontalAxis(currentVelocity);
@@ -139,9 +143,14 @@ public class PlayerController : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
-            var currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.name);
+            ReloadScene();
         }
+    }
+
+    private static void ReloadScene()
+    {
+        var currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
     }
 
     public void RegisterShadow(PlayerShadowController shadow)

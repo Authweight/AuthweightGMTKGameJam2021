@@ -335,7 +335,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4809,7 +4809,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4843,7 +4843,7 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
+  m_UseCustomVertexStreams: 1
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
@@ -4868,11 +4868,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3794737160197786916, guid: 0f54cef5fc5d8a14ba375e3e1581eb07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 81.73
+      value: 12.427041
       objectReference: {fileID: 0}
     - target: {fileID: 3794737160197786916, guid: 0f54cef5fc5d8a14ba375e3e1581eb07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4
+      value: 2.9423954
       objectReference: {fileID: 0}
     - target: {fileID: 3794737160197786916, guid: 0f54cef5fc5d8a14ba375e3e1581eb07, type: 3}
       propertyPath: m_LocalPosition.z

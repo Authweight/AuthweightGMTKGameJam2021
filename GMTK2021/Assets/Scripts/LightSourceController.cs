@@ -24,7 +24,7 @@ public class LightSourceController : MonoBehaviour
         var occluder = collision.GetComponent<OccluderController>();
         if (occluder != null)
         {
-            var newShadow = Instantiate(occluder.Shadow);
+            var newShadow = Instantiate(occluder.Shadow, occluder.transform.position, occluder.transform.rotation);
             var id = occluder.GetInstanceID();
             _references[id] = newShadow;
             newShadow.SetReferences(transform, occluder.transform);

@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6548687370516272428, guid: faeeea0fb74c742479ccf1d6308684fa, type: 3}
       propertyPath: FlightVector.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faeeea0fb74c742479ccf1d6308684fa, type: 3}
@@ -219,7 +219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6548687370516272428, guid: faeeea0fb74c742479ccf1d6308684fa, type: 3}
       propertyPath: FlightVector.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faeeea0fb74c742479ccf1d6308684fa, type: 3}
@@ -284,8 +284,12 @@ PrefabInstance:
       value: Shadow Bat
       objectReference: {fileID: 0}
     - target: {fileID: 6548687370516272428, guid: faeeea0fb74c742479ccf1d6308684fa, type: 3}
-      propertyPath: FlightVector.y
+      propertyPath: FlightVector.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6548687370516272428, guid: faeeea0fb74c742479ccf1d6308684fa, type: 3}
+      propertyPath: FlightVector.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faeeea0fb74c742479ccf1d6308684fa, type: 3}

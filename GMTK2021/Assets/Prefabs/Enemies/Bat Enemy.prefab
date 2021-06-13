@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FlightVector: {x: -1, y: 0}
+  TurnAngle: 60
+  speed: 8
 --- !u!114 &-318174955065470382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 2
   HitParticles: {fileID: 7387636616292121906}
+  _arena: {fileID: 0}
 --- !u!95 &730062985955383743
 Animator:
   serializedVersion: 3

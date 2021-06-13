@@ -116,11 +116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1536937418943906038, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.77
+      value: 21.61
       objectReference: {fileID: 0}
     - target: {fileID: 1536937418943906038, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.74
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: 1536937418943906038, guid: b2232e9e3d7bf64499b07d250c4fa6b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -384,11 +384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3680614768660019095, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
       propertyPath: FlightVector.x
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3680614768660019095, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
       propertyPath: FlightVector.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9155739487998102074, guid: 51cbc8e317af3234c8c61a39ce6661ca, type: 3}
       propertyPath: m_RootOrder

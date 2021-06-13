@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3424805602289087870}
   m_Layer: 9
   m_Name: Attack 1 Hitbox
-  m_TagString: Untagged
+  m_TagString: Player hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1343405804485867990}
   m_Layer: 8
   m_Name: Main Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 4777238479450237108}
   m_Layer: 9
   m_Name: Attack 2 Hitbox
-  m_TagString: Untagged
+  m_TagString: Player hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 5302990183399658744}
   m_Layer: 9
   m_Name: Air Attack Hitbox
-  m_TagString: Untagged
+  m_TagString: Player hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 3992163007196479997}
   m_Layer: 9
   m_Name: Attack 3 Hitbox
-  m_TagString: Untagged
+  m_TagString: Player hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

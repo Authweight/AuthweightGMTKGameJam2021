@@ -9,7 +9,7 @@ public class ShadowController : MonoBehaviour
     private Transform _occluder;
     private SpriteRenderer _render;
     private SpriteRenderer _occlusionRender;
-    private float _floorHeight = -2.78f;
+    private float _floorHeight;
 
     public float _discountRate;
 
@@ -21,7 +21,7 @@ public class ShadowController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         _render = GetComponent<SpriteRenderer>();
         var floor = Physics2D.Raycast(transform.position, Vector2.down, 100.0f, LayerMask.GetMask("Ground"));

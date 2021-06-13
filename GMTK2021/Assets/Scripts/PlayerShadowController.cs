@@ -12,13 +12,20 @@ public class PlayerShadowController : ShadowController
     public PlayerAttackController _airAttack;
 
     private PlayerController _player;
-    private bool _onGround;
-    private bool _lastOnGround;
+    private CooldownTimer _onGroundCooldown;
+
+    protected override void Start()
+    {
+        base.Start();
+        _onGroundCooldown = new CooldownTimer(0.1f);
+    }
 
     private void FixedUpdate()
     {
-        _lastOnGround = _onGround;
-        _onGround = CalculateOnGround();
+        if(CalculateOnGround())
+        {
+            _onGroundCooldown.StartCooldown(Time.time);
+        }
     }
 
     public override void SetReferences(Transform lightsource, Transform occluder)
@@ -35,7 +42,7 @@ public class PlayerShadowController : ShadowController
 
     public bool OnGround()
     {
-        return _lastOnGround || _onGround;
+        return !_onGroundCooldown.CheckTime(Time.time);
     }
 
     private bool CalculateOnGround()

@@ -6,7 +6,8 @@ using UnityEngine;
 public class BatEnemyController : EnemyController
 {
     public Vector2 FlightVector;
-    private float speed = 8;
+    public float TurnAngle;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class BatEnemyController : EnemyController
     {
         if (BumpingIntoWall())
         {
-            FlightVector = Quaternion.Euler(0, 0, 90) * -FlightVector;            
+            FlightVector = Quaternion.Euler(0, 0, TurnAngle) * -FlightVector;            
         }
 
         _rb.velocity = FlightVector.normalized * speed;
