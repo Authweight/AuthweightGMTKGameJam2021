@@ -24,7 +24,7 @@ public class ShadowController : MonoBehaviour
     protected virtual void Start()
     {
         _render = GetComponent<SpriteRenderer>();
-        var floor = Physics2D.Raycast(transform.position, Vector2.down, 100.0f, LayerMask.GetMask("Ground"));
+        var floor = Physics2D.Raycast(transform.position, Vector2.down, 100.0f, LayerMask.GetMask("Ground Level"));
         _floorHeight = floor.point.y;
     }
 
